@@ -8,7 +8,6 @@ const Navigation = () => {
       <div className='navigation'>
         <Link className='logo-container' to='/'>
           <HomeLogo className='logo' />
-          {/* <h1>Logo</h1> */}
         </Link>
         <div className="nav-links-container">
           <Link className='nav-link' to='/shop'>
