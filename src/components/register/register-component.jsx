@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createAuthUser, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
+import './register.styles.scss';
 
 const defaultFormFields = {
   displayName: '',
@@ -45,8 +46,8 @@ const RegisterForm = () => {
   }
 
   return (
-    <div>
-      <h1>Register</h1>
+    <div className='register-container'>
+      <h2>Register</h2>
       <form onSubmit={handleSubmit}>
 
         <FormInput label='Display Name' type='text' required onChange={handleChange} name="displayName" value={displayName} />
