@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createAuthUser, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
+import Button from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
 import './register.styles.scss';
 
@@ -34,7 +35,7 @@ const RegisterForm = () => {
       if (e.code === 'auth/email-already-in-use') {
         alert('email already in use')
       } else {
-        console.log('exeption with user creation:', e)
+        console.log('an exeption with user creation:', e)
       }
     }
   }
@@ -47,7 +48,7 @@ const RegisterForm = () => {
 
   return (
     <div className='register-container'>
-      <h2>Register</h2>
+      <h1>Register</h1>
       <form onSubmit={handleSubmit}>
 
         <FormInput label='Display Name' type='text' required onChange={handleChange} name="displayName" value={displayName} />
@@ -59,7 +60,7 @@ const RegisterForm = () => {
         <FormInput label='Password' type='password' required onChange={handleChange} name="password" value={password} />
 
         <FormInput label='Confirm Password' type='password' required onChange={handleChange} name="confirmPassword" value={confirmPassword} />
-        <button type="submit">Register</button>
+        <Button type="submit">Register</Button>
       </form>
     </div>
   );
