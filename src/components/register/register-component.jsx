@@ -16,8 +16,6 @@ const RegisterForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  const { setCurrentUser } = useContext(UserContext);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   }
@@ -32,8 +30,6 @@ const RegisterForm = () => {
 
     try {
       const { user } = await createAuthUser(email, password);
-
-      setCurrentUser(user);
 
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
