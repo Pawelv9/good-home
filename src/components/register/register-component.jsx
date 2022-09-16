@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { UserContext } from '../../contexts/user.context';
 import { createAuthUser, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 import Button from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
@@ -15,6 +16,8 @@ const RegisterForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  const { setCurrentUser } = useContext(UserContext);
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   }
@@ -29,6 +32,9 @@ const RegisterForm = () => {
 
     try {
       const { user } = await createAuthUser(email, password);
+
+      setCurrentUser(user);
+
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (e) {
@@ -39,6 +45,7 @@ const RegisterForm = () => {
       }
     }
   }
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
