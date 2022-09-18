@@ -7,9 +7,9 @@ export const ItemsContext = createContext({
 });
 
 export const ItemsProvider = ({ children }) => {
-  const [items, setItem] = useState(ITEMS);
+  const [items, setItems] = useState(ITEMS);
   const value = { items };
   return (
     <ItemsContext.Provider value={value}>{children}</ItemsContext.Provider>
   );
-}
+};
