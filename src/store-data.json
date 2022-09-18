@@ -1,0 +1,50 @@
+[
+{
+  "id": 1,
+  "name": "Heart",
+  "imageUrl": "https://i.ibb.co/n6Cv9JM/lamp-heart.jpg",
+  "price": 44
+},
+{
+  "id": 2,
+  "name": "Cosmetic",
+  "imageUrl": "https://i.ibb.co/bzbXQRW/cosmetic-lamp.jpg",
+  "price": 5 
+},
+{
+  "id": 3,
+  "name": "Crystal",
+  "imageUrl": "https://i.ibb.co/T81X1ds/lamps-crystals.jpg",
+  "price": 29 
+},
+{
+  "id": 4,
+  "name": "Galaxy",
+  "imageUrl": "https://i.ibb.co/NrkJYFb/lamp-universe.jpg",
+  "price": 49
+},
+{
+  "id": 5,
+  "name": "Jupiter",
+  "imageUrl": "https://i.ibb.co/Smsyc39/lamp-jupiter.jpg",
+  "price": 37 
+},
+{
+  "id": 6,
+  "name": "Bonsai Tree",
+  "imageUrl": "https://i.ibb.co/z55Nmj7/lamp-bonsai-tree.jpg",
+  "price": 17
+},
+{
+  "id": 7,
+  "name": "Bottle",
+  "imageUrl": "https://i.ibb.co/z55Nmj7/lamp-bonsai-tree.",
+  "price": 49 
+},
+{
+  "id": 8,
+  "name": "Cloud",
+  "imageUrl": "https://i.ibb.co/jhtBcHj/purple-lamp.jpg",
+  "price": 88 
+}
+]
