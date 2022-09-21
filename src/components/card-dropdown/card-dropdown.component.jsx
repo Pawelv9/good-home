@@ -6,24 +6,20 @@ import CartItem from '../cart-item/cart-item.component';
 import './card-dropdown.styles.scss';
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, setIsCartOpen, isCartOpen } = useContext(CartContext);
   const navigate = useNavigate()
 
   const toCheckoutHandler = () => {
+    setIsCartOpen(!isCartOpen);
     navigate('/checkout');
   }
 
   return (
     <div className='cart-dropdown-container'>
       <div className='cart-items'>
-        {
-          cartItems.length
-            ?
-            (
-              cartItems.map(item => <CartItem key={item.id} cartItem={item} />)
-            ) : (
-              <span className="empty-message">No Items</span>
-            )}
+        {cartItems.map(item =>
+          <CartItem key={item.id} cartItem={item} />)
+        }
       </div>
       <Button onClick={toCheckoutHandler}>Checkout</Button>
     </div >
