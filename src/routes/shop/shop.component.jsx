@@ -1,5 +1,5 @@
-import { Fragment, useContext } from 'react';
-import ItemCard from '../../components/item-card/item-card.component';
+import { useContext } from 'react';
+import ItemPreview from '../../components/item-preview/item-preview.component';
 import { ItemsContext } from '../../contexts/items.context';
 import './shop.styles.scss'
 
@@ -8,16 +8,10 @@ const Shop = () => {
 
   return (
     <>
-      {Object.keys(items).map(title => (
-        <Fragment key={title}>
-          <h2>{title}</h2>
-          <div className='items-container'>
-            {items[title].map(item => (
-              <ItemCard key={item.id} item={item} />
-            ))}
-          </div>
-        </Fragment>
-      ))}
+      {Object.keys(items).map(key => {
+        const itemsStore = items[key];
+        return <ItemPreview key={key} title={key} items={itemsStore} />
+      })}
     </>
   );
 };
