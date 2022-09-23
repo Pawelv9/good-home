@@ -1,18 +1,14 @@
-import { useContext } from 'react';
-import ItemPreview from '../../components/item-preview/item-preview.component';
-import { ItemsContext } from '../../contexts/items.context';
+import { Route, Routes } from 'react-router-dom';
+import Item from '../item/item.component';
+import ItemsPreview from '../items-preview/items-preview.component';
 import './store.styles.scss'
 
 const Store = () => {
-  const { items } = useContext(ItemsContext);
-
   return (
-    <div className='store-container'>
-      {Object.keys(items).map(key => {
-        const itemsStore = items[key];
-        return <ItemPreview key={key} title={key} items={itemsStore} />
-      })}
-    </div>
+    <Routes>
+      <Route index element={<ItemsPreview />} />
+      <Route path=':item' element={<Item />} />
+    </Routes>
   );
 };
 

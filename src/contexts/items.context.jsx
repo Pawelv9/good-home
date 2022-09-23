@@ -3,16 +3,16 @@ import { createContext, useEffect, useState } from 'react';
 import { getCategoriesAndDocuments } from '../utils/firebase/firebase.utils';
 
 export const ItemsContext = createContext({
-  items: [],
+  itemsMap: [],
 });
 
 export const ItemsProvider = ({ children }) => {
-  const [items, setItems] = useState({});
+  const [itemsMap, setItemsMap] = useState({});
 
   useEffect(() => {
     const getItems = async () => {
       const item = await getCategoriesAndDocuments('categories');
-      setItems(item);
+      setItemsMap(item);
     }
     getItems();
   }, [])
@@ -21,7 +21,7 @@ export const ItemsProvider = ({ children }) => {
   //   addCollectionAndDocuments('categories', STORE_DATA)
   // }, [])
 
-  const value = { items };
+  const value = { itemsMap };
   return (
     <ItemsContext.Provider value={value}>{children}</ItemsContext.Provider>
   );
