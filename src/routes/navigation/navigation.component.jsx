@@ -20,7 +20,7 @@ const Navigation = () => {
         </Link>
         <CartIcon />
         <div className="nav-links-container">
-          <Link className='nav-link' to='/shop'>
+          <Link className='nav-link' to='/store'>
             Discover
           </Link>
           {

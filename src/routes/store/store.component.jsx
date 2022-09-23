@@ -1,19 +1,19 @@
 import { useContext } from 'react';
 import ItemPreview from '../../components/item-preview/item-preview.component';
 import { ItemsContext } from '../../contexts/items.context';
-import './shop.styles.scss'
+import './store.styles.scss'
 
-const Shop = () => {
+const Store = () => {
   const { items } = useContext(ItemsContext);
 
   return (
-    <>
+    <div className='store-container'>
       {Object.keys(items).map(key => {
         const itemsStore = items[key];
         return <ItemPreview key={key} title={key} items={itemsStore} />
       })}
-    </>
+    </div>
   );
 };
 
-export default Shop;
+export default Store;
