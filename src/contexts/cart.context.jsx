@@ -29,7 +29,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
   }
 
-  return cartItems.map((cartItem) =>
+  return cartItems.map(cartItem =>
     cartItem.id === cartItemToRemove.id
       ? { ...cartItem, quantity: cartItem.quantity - 1 }
       : cartItem
@@ -76,7 +76,7 @@ export const CartProvider = ({ children }) => {
     setCartItems(addCartItem(cartItems, itemToAdd));
   };
 
-  const removeItemToCart = (cartItemToRemove) => {
+  const removeItemFromCart = (cartItemToRemove) => {
     setCartItems(removeCartItem(cartItems, cartItemToRemove));
   };
 
@@ -88,7 +88,7 @@ export const CartProvider = ({ children }) => {
     isCartOpen,
     setIsCartOpen,
     addItemToCart,
-    removeItemToCart,
+    removeItemFromCart,
     clearItemFromCart,
     cartItemCount,
     cartItems,
